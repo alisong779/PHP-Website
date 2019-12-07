@@ -11,13 +11,10 @@ $server = [
   'Absolute Path' => $_SERVER['SCRIPT_FILENAME']
 ];
 
-// print_r($server);
-
-// $client = [
-//   'Client System Info' => $_SERVER['HTTP_USER_AGENT'], 
-//   'Client IP' => $_SERVER['REMOTE_ADDR'], 
-//   'Remote Port' => $_SERVER['REMOTE_PORT']
-// ];
-// print_r($client);
+$client = [
+  'Client System Info' => $_SERVER['HTTP_USER_AGENT'], 
+  'Client IP' => $_SERVER['REMOTE_ADDR'], 
+  'Remote Port' => $_SERVER['REMOTE_PORT']
+];
 
 ?>
