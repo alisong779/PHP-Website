@@ -1,17 +1,21 @@
 <?php include 'inc/header.php'; ?>
+
 <?php
+/*
   if(isset($_GET['name'])){
-    echo $_GET['name'];
-  };
+    // echo $_GET['name'];
+  }
+  if(isset($_POST['name'])){
+    // echo $_GET['email'];
+    $name = htmlentities($_POST['name']);
+    echo $name;
+  }
+  */
+
 ?>
-<br>
-<?php
-  if(isset($_GET['email'])){
-    echo $_GET['email'];
-  };
-?>
+
 <h1>Form</h1>
-<form method="GET" action="get_post.php">
+<form method="POST" action="get_post.php">
   <div>
     <label>Name</label><br>
     <input type="text" name="name">
