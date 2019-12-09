@@ -18,7 +18,7 @@ $msgClass = '';
         $msg = 'Please enter a valid email';
         $msgClass = 'alert-danger';
       }else {
-        $toEmail = 'agolde726@yahoo.com';
+        $toEmail = 'email@email.com';
         $subject = 'Contact Request From '.$name;
         $body = '<h2>Contact Request</h2>
         <h4>Name</h4><p>'.$name.'</p>
@@ -37,7 +37,6 @@ $msgClass = '';
           $msg = 'Please try again';
           $msgClass = 'alert-danger';
         }
-
       }
     }else {
       $msg = 'Please fill in all fields';
@@ -57,14 +56,17 @@ $msgClass = '';
     <label>Name</label>
     <input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
   </div>
+
   <div class="form-group">
     <label>Email address</label>
     <input type="email" name="email" class="form-control" placeholder="Enter email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
   </div>
+
   <div class="form-group">
     <label>Message</label>
     <textarea name="message" class="form-control" placeholder="Your Message" value="<?php echo isset($_POST['message']) ? $message : ''; ?>"></textarea>
   </div>
+
   <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </form>
 
