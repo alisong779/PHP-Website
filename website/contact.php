@@ -35,16 +35,16 @@ $msgClass = '';
 
 
   <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="name" class="form-control" placeholder="Your Name">
-    </div>
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+  </div>
   <div class="form-group">
     <label>Email address</label>
-    <input type="email" name="email" class="form-control" placeholder="Enter email">
+    <input type="email" name="email" class="form-control" placeholder="Enter email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
   </div>
   <div class="form-group">
     <label>Message</label>
-    <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+    <textarea name="message" class="form-control" placeholder="Your Message" value="<?php echo isset($_POST['message']) ? $message : ''; ?>"></textarea>
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </form>
