@@ -1,15 +1,25 @@
 <?php include 'inc/header.php'; ?>
 <?php
+//Message variables
 $msg = '';
 $msgClass = '';
 
+//Check for Submit
   if(filter_has_var(INPUT_POST, 'submit')){
+    //Get Form Data
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
+    //Check Required Fields
     if(!empty($email) && !empty($name) && !empty($message)){
-      echo 'Message Sent!';
+      //Check email
+      if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+        $msg = 'Please enter a valid email';
+        $msgClass = 'alert-danger';
+      }else {
+        echo 'Submitted';
+      }
     }else {
       $msg = 'Please fill in all fields';
       $msgClass = 'alert-danger';
