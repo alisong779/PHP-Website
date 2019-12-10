@@ -12,10 +12,13 @@ $people[] = "Belle";
 $people[] = "Sofia";
 $people[] = "Sandra";
 
+//Get Query String
 $q = $_REQUEST['q'];
 
 $suggestion = "";
 
+
+//Get Suggestions
 if($q !== ""){
   $q = strtolower($q);
   $len = strlen($q);
