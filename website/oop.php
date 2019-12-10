@@ -7,7 +7,7 @@
    public function __construct($name, $email){
     $this->name = $name;
     $this->email = $email;
-    echo 'Person created<br>';
+    echo __CLASS__.': '. $name .' created<br>';
    }
 
     //Setters
@@ -27,13 +27,26 @@
   }
  }
 
- $person1 = new Person('Alison', 'ag123@gmail.com');
- echo $person1->getName();
-
-//  $person1->setName('Alison');
-//  echo $person1->getName();
  
+class Customer extends Person{
+  private $balance;
 
+  public function __construct($name, $email, $balance){
+    parent::__construct($name, $email, $balance);
+    $this->balance = $balance;
+    echo 'A new '.__CLASS__.' has been created<br>' .$name. ', your balance is: ';
+  }
 
+  public function setBalance($balance){
+    $this->balance = $balance;
+  }
 
+  public function getBalance(){
+    return $this->balance.'<br>';
+  }
+
+}
+
+$customer1 = new Customer('John Doe', 'jd@gmail.com', 300);
+echo $customer1->getBalance();
 ?>
