@@ -45,8 +45,9 @@ $msgClass = '';
   }
 ?>
 
+
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="width:800px; margin-right:auto; margin-left:auto;">
 <h1>Contact Me</h1>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <?php if($msg != ''): ?>
     <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
   <?php endif; ?>

@@ -25,6 +25,9 @@
       <li class="nav-item">
         <a class="nav-link" href="contact.php">Contact</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="suggest.php">AJAX with JS</a>
+      </li>
     </ul>
   </div>
 </nav>
