@@ -1,35 +1,28 @@
-<?php
-$people[] = "Alison";
-$people[] = "Bob";
-$people[] = "Chris";
-$people[] = "Chad";
-$people[] = "Dan";
-$people[] = "Connie";
-$people[] = "Amber";
-$people[] = "Nick";
-$people[] = "Erica";
-$people[] = "Belle";
-$people[] = "Sofia";
-$people[] = "Sandra";
+<?php require('config/db.php');
+      require('config/queries.php');
 
 //Get Query String
 $q = $_REQUEST['q'];
 
 $suggestion = "";
-
+$names = array();
+foreach($posts as $post){
+  $names[] = $post['author'];
+}
 
 //Get Suggestions
 if($q !== ""){
   $q = strtolower($q);
   $len = strlen($q);
-  foreach($people as $person){
-    if(stristr($q, substr($person, 0, $len))){
+  foreach($names as $author){
+    if(stristr($q, substr($author, 0, $len))){
       if($suggestion === ""){
-        $suggestion = $person;
+        $suggestion = $author;
       }else {
-        $suggestion .= ", $person";
+        $suggestion .= ", $author";
       }
     }
   }
 }
 echo $suggestion === "" ? "No Suggestions" : $suggestion;
+
